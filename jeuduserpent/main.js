@@ -87,7 +87,8 @@ window.onload = function()
                     allowedDirections = ["left", "right"];
                     break;
         }
-            if (allowedDirections.indexOf(newDirection) > -1) {
+            if (allowedDirections.indexOf(newDirection) > -1) 
+            {
                 this.direction = newDirection;
             }
         };
