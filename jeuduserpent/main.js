@@ -33,7 +33,7 @@ window.onload = function() {
         {
             if(snakee.isEatingApple(applee))
             {
-                //Le serpent à mangé la pomme
+                applee.setNewPosition();
             }
             ctx.clearRect(0, 0, canvasWidth, canvasHeight);
             snakee.draw();
@@ -126,7 +126,7 @@ window.onload = function() {
         };
         
         
-        this.isEatingApple(appleToEat)
+        this.isEatingApple = function(appleToEat)
         {
           var head = this.body[0];
           if (head[0] === appleToEat.position[0] && head[1] === appleToEat.position[1])
@@ -155,7 +155,9 @@ window.onload = function() {
         };
         this.setNewPosition = function()
         {
-
+          var newX = Math.round(Math.random() * (widthInBlocks - 1));
+          var newY = Math.round(Math.random() * (widthInBlocks - 1));
+          this.position = [newX, newY];
         };
     }
 
