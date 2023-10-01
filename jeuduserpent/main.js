@@ -159,6 +159,18 @@ window.onload = function() {
           var newY = Math.round(Math.random() * (widthInBlocks - 1));
           this.position = [newX, newY];
         };
+        this.isOnsnake = function(snakeToCheck)
+        {
+          var isOnSnake = false;
+          for(var i = 0 ; i < snakeToCheck.body.length; i++ )
+          {
+            if(this.position[0] === snakeToCheck.body[i][0] && this.position[1] === snakeToCheck.body[i][1])
+            {
+              isOnSnake = true;
+            }
+          }
+          return isOnSnake;
+        };
     }
 
     document.onkeydown = function handleKeyDown(e) {
